@@ -1,0 +1,120 @@
+Determine the efficiency of an Algorithm – use Big O Notation
+Algorithm is a process or set of steps used to accomplish a certain task. a process or set of rules to be followed in calculations or other problem-solving operations, especially by a computer.
+
+Ref: https://www.digitalocean.com/community/tutorials/js-big-o-notation 
+https://medium.com/cesars-tech-insights/big-o-notation-javascript-25c79f50b19b
+https://dev.to/b0nbon1/understanding-big-o-notation-with-javascript-25mc 
+
+Learn how to calculate the Time Complexity of an Algorithm  - Big O Notation
+Use Big O Notation to analyze performance of an algorithm. It helps to write a more efficient code in an app. It allows developers to see how the runtime, output and space complexity of an algorithm grows as the input grows
+
+•	Using the Performance Class to test the efficiency of your code
+
+Implementation
+// This function will add numbers from 1 to n
+function addUpTo(n){
+	let total = 0;
+
+// Loop will count from 1 to the number represented by n and add each iteration to the total variable incrementally
+	for(let i = 1; i <= n; i++){
+		total += i;
+	}
+
+// This line sends the content of the total to the function
+	return total;
+}
+
+// This code get the initial time (in milliseconds) when the function starts
+var t1 = performance.now();
+addUpTo(10000000);
+
+// This code get the final time (in milliseconds) when the function ends 
+var t2 = performance.now();
+
+// This code converts the time to seconds and display it appropriately
+console.log("Time elasped: ${t2 - t1} / 1000} seconds. ");
+
+
+•	To count the number of operations in an Algorithm (use Big O Notation)
+
+Implementation
+// This function will return 3 operations. 
+// Regardless of the size of n, this function will have 3 and will be 0(1) – Constant Time
+
+Function addUpTo(n){
+	return n * (n + 1) / 2
+}
+
+// This function will return 5n + 2 operations. 
+// Regardless of the size of n, this function will have 5n + 2 and will be 0(n) – Linear Time
+
+function addUpTo(n){
+	let total = 0;
+	for(let i = 1; i <= n; i++){
+		total += i;
+	}
+}
+
+Learn about the Types of Big O Notations implemented in an Algorithms
+
+// As the input grows, the runtime and output of the algorithm is always constant. It will always take the same amount of time to run regardless how large the input is. 
+•	O(1) – Constant Time
+
+// As the input grows, the runtime and output of the algorithm grows linearly. It will always increase proportionally to the input
+•	O(n) – Linear Time
+
+// As the input grows, the runtime and output of the algorithm grows quadratically. The output and time it takes for the code to run will always be multiplied based on the input.
+•	O(n2) – Quadratic Time 
+
+Implementation (Quadratic Time – O(n2) because it’s nested)
+function printAllPairs(n){
+	for(let i = 0; i < n; i++){
+		for(let j = 0; j < n; j++){
+			console.log(i, j);
+		}
+	}
+}
+	
+Learn about Important Notes regarding Time Complexity in Big O Notation
+
+b.	Arithmetic Operations – always takes constant time
+c.	Variable assignment – always takes constant time
+d.	Accessing Element in an array – using its index always takes constant time
+e.	Accessing an Object value – using its key always takes constant time
+f.	In a loop - the complexity is the length of the loop times the complexity of whatever happens inside of the loop. When a loop is not nested it is most likely O(n) in its worst case (linear time). If it is nested, it is O(n2) in its worst case (quadratic time).
+
+Learn how to Calculate the Space and Time Complexities of a specific Algorithm
+This has to do with the amount of memory that is taken up as the input of an algorithmic function grows… Please Note: Space Complexity is not calcuated by the loop runtime rather it is calculated by the initialized variables that affected during the operations.
+
+Ref: https://dev.to/b0nbon1/understanding-big-o-notation-with-javascript-25mc 
+
+•	Basic Rules for calculating Space Complexity of an Algorithm
+
+-	Most Premitives have constant space (booleans, numbers, undefined and null) – have constant space O(1) regardless of how large the numbers or calculation is…
+
+-	Strings – This require linear space O(n) space complexity as the input grows
+-	Arrays and Objects – These require linear space O(n) space complexity as the input grows… For instance: An array of 4 elements will take up twice the amount of space taken up by an array of 2 elements.
+
+Implementation – Constant Time
+Variables affected – total and I are the variables used to calcuate the Space Complexity. Note: You are just add to an already created variable (total), so the space is constant because the space of a number doesnot increase (whether 1 or 100000). It always take up the same space.
+
+Implementation
+function addUpTo(n){
+	let total = 0;
+	// The loop will always run a fixed number of times
+	for(let i = 1; i <= 5; i++){
+		total += i;
+	}
+}
+
+Implementation – Linear Time
+Variables affected – newArr. It space grows linear as the input of the function. Note: The space occupied by an array with 4 elements doubled the space occupied by an array with 2 elements. If arr(array) has 10 elements, 10 elements will be stored in the newArr, if it increases the newArr will also increase.
+
+Implementation
+function double(arr){
+	let newArr = [];
+	for(let i = 0; i < arr.length; i++){
+		newArr.push(2 * arr[i]);
+	}
+	return newArr;
+}
