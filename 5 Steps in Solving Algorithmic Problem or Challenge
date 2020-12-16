@@ -1,0 +1,108 @@
+5 Steps - Plan for solving any Algorithmic problem or challenge
+An algorithm is a collection of steps to solve a particular problem. Learning data structures and algorithms allow us to write efficient and optimized computer programs.
+A Step by step strategy for solving problems or finding a solution to problems
+
+1.	Understand the Problem you are trying to solve
+// Step by step, make sure you can explain in your words what problem is about, what’s the input and the intended output you intend to generate when the solution is completed.
+
+2.	Explore Concrete examples
+// Write down the input and the expected output
+
+3.	Break down the problem – Step by Step using Pseudo-code
+// With the input(s), break down the problem into a step by step procedure (PSEUDO COD) on how you intend to get the expected output(s) or result(s).
+
+4.	Solve / Simply the Problem
+// Write down the actual programming logic to solve the problem
+
+5.	Refactor your solution
+// Consider the performance of your application during the process
+
+The Problem
+Write a function which takes two numbers and return their sum
+
+Implementation (Step by step procedure considering the above approach)
+Write a function which takes two numbers and return their sum
+
+1.	Understand the Problem you are trying to solve
+    a.	Can I restate the problem in my own words
+    // This problem is about Implementing addition
+
+    b.	What are the inputs that go into the problem
+    // Should I use – integer, floating points numbers, strings …
+    // How large should the input be
+    // Should the inputs always be two (2) numbers
+
+    c.	What are the output that should be generated from the solution
+    // Should be output be – integer, floating points numbers, strings …
+
+    d.	Should the output be determined from the input
+    // What happens when only 1 number is passed
+    // What happens if an invalid number is passed
+    // What happens when no input is passed 
+
+2.	Explore Concrete examples
+    a.	Start with simple examples – with the input and the output
+    Example:
+    addTwoInput(10, 20){}	 // 30
+
+    b.	Progress with complex examples – with the input and the output
+    Example:
+    addTwoInput(50, 20)	 // -30
+
+    c.	Explore example with invalid inputs
+    Example:
+    addTwoInput(“testing”,  20)   // You entered an invalid number
+
+    Example:
+    addTwoInput(10 20,  20)   // You entered an invalid number
+
+
+3.	Break down the Problem (Use comments as Pseudo-code)
+    // Explicitly write down the step you need to take to solve this problem from the initialization of the function to its completion. This process enables you to critically think through the problem and how the solution will be generated.
+
+    Implementation
+    // The function will take two inputs from the user
+
+         // If you used Let, please initialize the variables outside of the If block. 
+
+    // Input should be tested to know whether they are valid numbers
+
+        // The multiplied numbers should be save in a variable
+
+                                                // Display an error message
+
+       // The variable with the added numbers should be returned
+
+    // Call the function with two inputs in order to execute its code
+
+
+4.	Solve / Simply the Problem
+    // Considering the Pseudo-code in step 3, write the complete programming logic / solution and test it
+    Implementation
+
+    // The function will take two inputs from the user
+    Function addTwoNumbers(a, b){
+
+    // If you used Let, please initialize the variables outside of the If block. 
+    let result = 0;
+
+    // Input should be tested to know whether they are valid numbers
+    If(!isNaN(a) && !isNaN(b)){
+
+        // The multiplied numbers should be save in a variable
+        result = a + b;
+
+    }else{
+        // Display an error message
+    }
+
+    // The variable with the added numbers should be returned
+    return result
+
+    }
+
+    // Call the function with two inputs in order to execute its code
+    addTwoNumbers(10, 30)     // 40
+
+5.	Refactor your solution 
+// Make your code easily readable and efficient. See whether your code can be more efficient with another solution. Always make sure to analyze the efficiency of your code.
